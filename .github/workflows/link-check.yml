@@ -1,0 +1,27 @@
+name: Check documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  html-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify core documentation files
+        run: |
+          test -f index.html
+          test -f architecture.html
+          test -f gateway.html
+          test -f integrations.html
+          test -f portal.html
+          test -f securite.html
+          test -f operations.html
+          test -f CNAME
+          grep -q 'docs.dubsar.ai' CNAME
