@@ -1,16 +1,32 @@
 <!doctype html>
 <html lang="fr">
-  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Architecture technique DUBSAR : portail, Gateway, Core et fournisseurs IA." /><title>Architecture — DUBSAR Docs</title><link rel="stylesheet" href="assets/style.css" /></head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Architecture cible DUBSAR : portail, Gateway, Core et fournisseurs IA. Documentation de référence, pas une installation publique." />
+    <title>Architecture — DUBSAR Docs</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
   <body data-page="architecture">
-    <div class="topbar"><div class="shell"><span>Documentation technique</span><a href="https://dubsar.ai/fr/">Retour au site DUBSAR</a></div></div>
-    <header><div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark">D</span><span>DUBSAR <small>Docs</small></span></a><nav aria-label="Documentation"><a data-page-link="home" href="index.html">Démarrer</a><a data-page-link="architecture" href="architecture.html">Architecture</a><a data-page-link="gateway" href="gateway.html">Gateway</a><a data-page-link="integrations" href="integrations.html">Intégrations</a><a data-page-link="operations" href="operations.html">Exploitation</a></nav></div></header>
-    <main class="shell grid"><article class="content"><span class="eyebrow">Fondations</span><h1>Une couche de contrôle commune pour les flux IA.</h1><p class="lead">DUBSAR ne remplace pas un outil d’automatisation ni un modèle IA. Il encadre les appels qui doivent être mis sous contrôle, applique une décision, puis rend la décision visible et vérifiable.</p>
+    <div class="topbar"><div class="shell"><span>Documentation technique de référence</span><a href="https://dubsar.ai/fr/">Retour au site DUBSAR</a></div></div>
+    <header><div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark">D</span><span>DUBSAR <small>Docs</small></span></a><nav aria-label="Documentation"><a data-page-link="home" href="index.html">Accueil</a><a data-page-link="architecture" href="architecture.html">Architecture</a><a data-page-link="gateway" href="gateway.html">Gateway</a><a data-page-link="integrations" href="integrations.html">Intégrations</a><a data-page-link="operations" href="operations.html">Exploitation</a></nav></div></header>
+    <main class="shell grid"><article class="content">
+      <span class="eyebrow">Architecture cible</span>
+      <h1>Une couche de contrôle commune pour les flux IA.</h1>
+      <p class="lead">DUBSAR ne remplace pas un outil d’automatisation ni un modèle IA. L’architecture de référence encadre les appels qui doivent être mis sous contrôle, applique une décision, puis rend la décision visible et vérifiable.</p>
+      <div class="notice" role="status"><strong>Statut public actuel :</strong> aucune installation publique prise en charge ; le portail d’audit automatisé est en construction et n’est pas publiquement accessible ; l’Audit professionnel DUBSAR est disponible sur demande. Références : <a href="https://github.com/kotnisofiane-bit/DUBSAR">dépôt DUBSAR</a> · <a href="https://github.com/kotnisofiane-bit/DUBSAR/blob/main/STATUS.md">STATUS.md</a> · <a href="https://github.com/kotnisofiane-bit/DUBSAR/blob/main/INSTALLATION.md">INSTALLATION.md</a> · <a href="https://dubsar.ai/fr/audit">dubsar.ai/fr/audit</a>.</div>
       <div class="diagram">Outils métiers, scripts, n8n, Make, applications<br>                    │<br>                    ▼<br>              Gateway DUBSAR<br>     contrôle · anonymisation · journalisation<br>                    │<br>                    ▼<br>              Core déterministe<br>     autoriser · transformer · bloquer · demander validation<br>                    │<br>                    ▼<br>     fournisseur IA autorisé ou route souveraine<br><br>Portail DUBSAR : supervision, preuves, décisions humaines et rapports</div>
-      <h2>Les composants</h2>
-      <div class="cards"><div class="card"><h3>Gateway</h3><p>La passerelle technique. Elle reçoit les appels IA choisis par l’entreprise, les soumet à la politique et applique la réponse du Core.</p></div><div class="card"><h3>Core</h3><p>Le moteur déterministe. Les décisions critiques ne dépendent pas d’une réponse libre d’un modèle de langage.</p></div><div class="card"><h3>Portail</h3><p>La tour de contrôle. Il présente les flux, les alertes, les validations et les preuves à l’équipe responsable.</p></div><div class="card"><h3>Agents DUBSAR</h3><p>Ils assistent l’analyse et la rédaction des rapports. Ils ne remplacent pas les règles de blocage ni le contrôle humain.</p></div></div>
-      <h2>Deux parcours complémentaires</h2><h3>Audit Flash</h3><p>Un diagnostic d’entrée, depuis le portail, permettant de cartographier une partie des usages IA déclarés ou visibles via les sources connectées de l’entreprise. Ce résultat n’est pas une surveillance exhaustive.</p><h3>Gouvernance continue</h3><p>Après installation de la Gateway, les appels sélectionnés passent par une politique centrale. L’entreprise garde ses outils ; DUBSAR rend les flux concernés contrôlables et traçables.</p>
-    </article><aside class="sidebar"><b>Dans cette page</b><a href="#">Vue d’ensemble</a><a href="gateway.html">La Gateway</a><a href="portal.html">Le portail</a><a href="securite.html">Sécurité et données</a></aside></main>
-    <footer><div class="shell"><span>© DUBSAR — Documentation technique</span><span><a href="https://dubsar.ai/fr/">dubsar.ai</a></span></div></footer><script src="assets/site.js"></script>
+      <h2>Les composants visés</h2>
+      <div class="cards"><div class="card"><h3>Gateway</h3><p>Passerelle technique de l’architecture cible. Elle recevrait les appels IA choisis par l’entreprise, les soumettrait à la politique et appliquerait la réponse du Core.</p></div><div class="card"><h3>Core</h3><p>Moteur déterministe privé, non distribué ici. Les décisions critiques ne dépendent pas d’une réponse libre d’un modèle de langage.</p></div><div class="card"><h3>Portail</h3><p>Tour de contrôle visée. Elle présenterait les flux, les alertes, les validations et les preuves. Le portail automatisé n’est pas publiquement accessible.</p></div><div class="card"><h3>Agents DUBSAR</h3><p>Ils assisteraient l’analyse et la rédaction des rapports. Ils ne remplacent pas les règles de blocage ni le contrôle humain.</p></div></div>
+      <h2>Parcours actuels et architecture cible</h2>
+      <h3>Portail d’audit automatisé</h3>
+      <p>Parcours visé : définir un périmètre, relier des sources autorisées, signaler des incohérences et produire un rapport validable par un humain. Ce portail est en construction et en validation ; il n’est pas publiquement accessible. La page publique d’entrée est <a href="https://dubsar.ai/fr/audit">dubsar.ai/fr/audit</a>.</p>
+      <h3>Audit professionnel DUBSAR</h3>
+      <p>Parcours actuellement disponible sur demande : intervention bornée, sources autorisées, lecture seule par défaut et revue humaine, sous mandat convenu.</p>
+      <h3>Gouvernance continue et Gateway</h3>
+      <p>Dans l’architecture cible, les appels sélectionnés passeraient par une politique centrale après mise en place de la Gateway. Ce modèle relève d’une gouvernance continue possible plus tard ; architecture, distribution, support et licence restent indécis. Ce n’est pas une installation publique, ni un parcours actuellement offert hors mandat.</p>
+    </article><aside class="sidebar"><b>Dans cette page</b><a href="#">Vue d’ensemble</a><a href="gateway.html">La Gateway (cible)</a><a href="portal.html">Le portail visé</a><a href="securite.html">Sécurité et données</a></aside></main>
+    <footer><div class="shell"><span>© DUBSAR — Documentation technique de référence</span><span><a href="https://github.com/kotnisofiane-bit/DUBSAR">Dépôt DUBSAR</a> · <a href="https://github.com/kotnisofiane-bit/DUBSAR/blob/main/STATUS.md">Statut</a> · <a href="https://github.com/kotnisofiane-bit/DUBSAR/blob/main/INSTALLATION.md">Installation</a> · <a href="https://dubsar.ai/fr/audit">Audit</a> · <a href="https://dubsar.ai/fr/privacy/">Confidentialité</a></span></div></footer>
+    <script src="assets/site.js"></script>
   </body>
 </html>
-
